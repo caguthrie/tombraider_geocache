@@ -18,14 +18,13 @@ class Decoder
     placeholder = ""
     while i < @str.length
       ascii_number = @str[i].to_num - offset(i)
-      puts "decoding #{@str[i]} as #{ascii_number}"
       if ascii_number < 97
         ascii_number += 26
       end
       placeholder << ascii_number.chr
       i += 1
     end
-    puts placeholder
+    puts placeholder.gsub("stop","\n")
   end
 
   def offset(num)
@@ -35,7 +34,13 @@ class Decoder
 
 end
 
-encrpyted_message = "eceueawimetkvpgztloxqbrrghfhywfyriiev"
+encrpyted_message = "eceueawimetkvpgztloxqbrrghfhywfyriievgzqzmsqtksqyzbsggkccnrkzsuobuhwwadw"\
+                    "vfxrghuiisftrdciwgsndiscausejothpsoqvtlbhedxlphlfrswcqxhgzvoihvnjqpsrf"\
+                    "ppoksffrfuleyvoprfrnrfultjpthpgjoiwgxyhpxswchrkiohrgkpwesgyvwyaeuaqbvv"\
+                    "hngffhskevsvbrlhjfrtjygsyiadusexwguvmjsieqgusphvnzfkghhdbxhvvvvvqnvhsox"\
+                    "rcuesrbqpucdiefppgzrrtksdevgmqfrpbuwtjjtglpazbhthgvrtksaclqbmhhphaaskuy"\
+                    "hftrdulepwtctsrdxdustjljwurrnecyetpvthyhuiuhzxwqmktkmsiysgsutowbufrdd"\
+                    "bexhtlgkvggoqsiynfygrjwkthsoilgcgbwchrkiohrgkcbusvgkhfinuaqdxcbdoido"
 key = "coronadobeach"
 d = Decoder.new(encrpyted_message, key)
 d.decode
