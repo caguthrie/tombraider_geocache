@@ -6,8 +6,6 @@ end
 
 class Decoder
 
-  attr_accessor :offset_str
-
   def initialize(str, offset_str)
     @str = str
     @offset_str = offset_str
