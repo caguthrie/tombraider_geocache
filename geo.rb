@@ -39,7 +39,10 @@ encrpyted_message = "eceueawimetkvpgztloxqbrrghfhywfyriievgzqzmsqtksqyzbsggkccnr
                     "rcuesrbqpucdiefppgzrrtksdevgmqfrpbuwtjjtglpazbhthgvrtksaclqbmhhphaaskuy"\
                     "hftrdulepwtctsrdxdustjljwurrnecyetpvthyhuiuhzxwqmktkmsiysgsutowbufrdd"\
                     "bexhtlgkvggoqsiynfygrjwkthsoilgcgbwchrkiohrgkcbusvgkhfinuaqdxcbdoido"
-key = "coronadobeach"
+
+puts "Please enter the key"
+key = gets.chomp
+puts "The key '#{key}' has decoded the message as follows:"
 d = Decoder.new(encrpyted_message, key)
 d.decode
 
